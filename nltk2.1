@@ -1,0 +1,34 @@
+ import nltk
+from nltk.tokenize import sent_tokenize, word_tokenize
+from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer
+from nltk.tokenize import PunktSentenceTokenizer
+
+sample_text = open("testtext.txt", "r").read()
+
+
+custom_sent_tokenizer = PunktSentenceTokenizer()
+tokenized = custom_sent_tokenizer.tokenize(sample_text)
+
+def process_content():
+    try:
+        for i in tokenized:
+            words = nltk.word_tokenize(i)
+            tagged = nltk.pos_tag(words)
+            namedEnt = nltk.ne_chunk(tagged, binary=True)
+            #print (namedEnt)
+            #chunkGram = r"""Chunk: {<PERSON>+<VB.?>+<PERSON>}"""
+            chunkGram = r"""Chunk: {<VB.?>+<NE>+<.*>+<NE>|<NE>+<VB.?>+<NE>|<NE>+<.*>+<VB.?>+<.*>+<NE>}"""
+            chunkParser = nltk.RegexpParser(chunkGram)
+            chunked = chunkParser.parse(namedEnt)
+            #chunked_list=[]
+            #chunked_list.extend(chunked)
+            #print(chunked_list)
+            docs = []
+
+            for subtree in chunked.subtrees(filter=lambda t: t.label() == 'Chunk'):
+                docs.append(" ".join([a for (a,b) in subtree.leaves()]))
+            subtree.draw()
+    except Exception as e:
+        print(str(e))
+process_content()
