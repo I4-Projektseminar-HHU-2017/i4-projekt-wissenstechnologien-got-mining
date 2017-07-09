@@ -28,7 +28,7 @@ def process_content():
 
             for subtree in chunked.subtrees(filter=lambda t: t.label() == 'Chunk'):
                 docs.append(" ".join([a for (a,b) in subtree.leaves()]))
-            subtree.draw()
+                subtree.draw()
     except Exception as e:
         print(str(e))
 process_content()
