@@ -1,0 +1,22 @@
+import nltk
+from nltk.tokenize import sent_tokenize, word_tokenize
+from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer
+from nltk.tokenize import PunktSentenceTokenizer
+from nltk.corpus import stopwords
+import re
+import string
+import nltk
+from nltk.collocations import BigramCollocationFinder, BigramAssocMeasures
+
+
+
+print(open("got2.txt", "r").read().find("you know nothing"))
+text = open("got2.txt", "r").read()
+print(len(text))
+tokenizer = PunktSentenceTokenizer()
+tokenized = tokenizer.tokenize(text)
+for i in tokenized:
+        if (i.find("You know nothing")!=-1):
+            print(i)
+
