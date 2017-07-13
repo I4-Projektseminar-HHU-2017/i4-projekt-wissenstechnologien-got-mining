@@ -11,12 +11,13 @@ from nltk.collocations import BigramCollocationFinder, BigramAssocMeasures
 
 
 
-print(open("got2.txt", "r").read().find("you know nothing"))
-text = open("got2.txt", "r").read()
+print(open("got3.txt", "r").read().find("you know nothing"))
+text = open("got3.txt", "r").read()
 print(len(text))
 tokenizer = PunktSentenceTokenizer()
 tokenized = tokenizer.tokenize(text)
 for i in tokenized:
-        if (i.find("You know nothing")!=-1):
-            print(i)
-
+    cnt=0
+    if (i.lower().find("you know nothing")!=-1):
+            cnt=cnt+1
+            print(str(cnt)+": "+i)
