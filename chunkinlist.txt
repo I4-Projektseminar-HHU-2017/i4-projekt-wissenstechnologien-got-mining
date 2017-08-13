@@ -1,1 +1,0 @@
-https://stackoverflow.com/questions/19326278/nltk-turning-a-subtree-into-a-list-in-python-rss-feed-chunking
