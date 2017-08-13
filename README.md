@@ -12,7 +12,7 @@ GENERAL USAGE NOTES
 -------------------
 
 - Before using the program, you need to install Python 3.4 and the NLTK.
-- The program uses following files: namedEntities.txt, synonyms.txt, book.txt
+- The program uses following files: NamedEntities.txt, Synonyms.txt, book.txt
   The first two files can be found in this folder. Because of copyright and license agreements, we are not allowed to upload any books.
 - To use the program, you have to download all required files and save them in one folder. Then execute the file FindMurder.py.
 - The output will show all found sentences with their potential subjects and objects.
