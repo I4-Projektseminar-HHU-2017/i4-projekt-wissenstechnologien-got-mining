@@ -20,10 +20,10 @@ GENERAL USAGE NOTES
 
 CONTACT
 -------
-Nicolas.Buck@hhu.de
-Jannis.Szameitat@hhu.de
-Natalie.Singh@hhu.de
+- Nicolas.Buck@hhu.de
+- Jannis.Szameitat@hhu.de
+- Natalie.Singh@hhu.de
 
-COPYRIGHT AND LICENSE
----------------------
-???
+Copyright 2017 Nicolas Buck, Jannis Szameitat & Natalie Singh
+
+
